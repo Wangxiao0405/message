@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本提交</title>
+</head>
+<style>
+    .box{
+        width: 500px;
+        height: 500px;
+        border: 2px solid #f2f2f2;
+        margin: 100px auto;
+    }
+    .top{
+        width: 100%;
+        height: 300px;
+        background: pink;
+    }
+    input{
+        width: 100%;
+        height: 140px;
+        background: #f2f2f2;
+        border: none;
+    }
+    button{
+        width:200px;
+        height: 60px;
+        line-height: 60px;
+        outline: none;
+        border: none;
+        background: #f2f2f2;
+        margin: 35px auto;
+        display: block;
+        font-size: 30px;
+        color: black;
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="top"></div>
+        <input type="text">
+        <button>提交</button>
+    </div>
+</body>
+</html>
+<script>
+    let input=document.querySelector("input");
+    let button=document.querySelector("button");
+    let top1=document.querySelector(".top");
+    console.log(input,button,top1);
+    button.onclick=function(){
+        let text=document.createElement("div");
+        text.style=`width:100%;height:50px;border-bottom:1px solid #000;font-size=16px;color:red;line-height:50px;`
+        text.innerText=input.value;
+        input.value="";
+        top1.appendChild(text);
+    }
+
+</script>
